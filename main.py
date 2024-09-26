@@ -137,30 +137,43 @@ def calc_and_display_costs():
     st.sidebar.markdown(f"- Input cost: ${input_cost:.5f}")
     st.sidebar.markdown(f"- Output cost: ${output_cost:.5f}")
 
-
 def main():
-    init_page()
-    init_messages()
-    chain = init_chain()
+    # タイトルを設定
+    st.title("put password")
 
-    # チャット履歴の表示 (第2章から少し位置が変更になっているので注意)
-    for role, message in st.session_state.get("message_history", []):
-        st.chat_message(role).markdown(message)
+    # テキスト入力欄
+    input_text = st.text_input("put password")
 
-    # ユーザーの入力を監視
-    if user_input := st.chat_input("聞きたいことを入力してね！"):
-        st.chat_message('user').markdown(user_input)
+    # ボタン
+    if input_text2 or st.button("送信"):
+        if input_text2 == "1234" or input_text == "1234":
+            input_text2 = input_text
+            # 入力値が1234の場合、別の画面を表示する
+            init_page()
+            init_messages()
+            chain = init_chain()
 
-        # LLMの返答を Streaming 表示する
-        with st.chat_message('ai'):
-            response = st.write_stream(chain.stream({"user_input": user_input}))
+            # チャット履歴の表示 (第2章から少し位置が変更になっているので注意)
+            for role, message in st.session_state.get("message_history", []):
+                st.chat_message(role).markdown(message)
 
-        # チャット履歴に追加
-        st.session_state.message_history.append(("user", user_input))
-        st.session_state.message_history.append(("ai", response))
+            # ユーザーの入力を監視
+            if user_input := st.chat_input("聞きたいことを入力してね！"):
+                st.chat_message('user').markdown(user_input)
 
-    # コストを計算して表示
-    calc_and_display_costs()
+                # LLMの返答を Streaming 表示する
+                with st.chat_message('ai'):
+                    response = st.write_stream(chain.stream({"user_input": user_input}))
+
+                # チャット履歴に追加
+                st.session_state.message_history.append(("user", user_input))
+                st.session_state.message_history.append(("ai", response))
+
+            # コストを計算して表示
+            calc_and_display_costs()
+        else:
+            st.write("入力値が異なります")
+
 
 
 if __name__ == '__main__':
