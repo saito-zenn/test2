@@ -145,7 +145,7 @@ def main():
     input_text = st.text_input("put password")
 
     # ボタン
-    if t.button("送信"):
+    if st.button("送信"):
         if input_text == "1234":
 
             # 入力値が1234の場合、別の画面を表示する
