@@ -53,7 +53,7 @@ def select_model():
     models = ("にゃんこ博士","にゃん音楽家","ごろにゃん","プラダにゃん","ぐーたらにゃん")
     model = st.sidebar.radio("にゃんこ選んでね:", models)
     password = st.sidebar.text_input("あいことにゃ!", type="password")
-    if password == "haruka" :
+    if password != "haruka" :
         if model == "にゃんこ博士":
             img_path = "./image1.jpg"
             img = Image.open(img_path)
