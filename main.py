@@ -76,7 +76,7 @@ def select_model():
 
 
 def create_agent():
-    tools = [search_ddg, fetch_page]
+    tools = [search_ddg, fetch_page,calculate_bmi]
     p_num ,llm = select_model()
 
     if p_num == 1:
