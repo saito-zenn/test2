@@ -1,3 +1,5 @@
+from langchain_core.tools import tool
+
 @tool
 def calculate_bmi(height, weight):
   """BMIを計算する関数
