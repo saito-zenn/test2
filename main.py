@@ -55,21 +55,33 @@ def select_model():
     password = st.sidebar.text_input("あいことにゃ!", type="password")
     if password == "haruka" :
         if model == "にゃんこ博士":
-            img_path = "./saito_neko.jpg"
+            img_path = "./image1.jpg"
             img = Image.open(img_path)
             st.sidebar.image(img,width=200)
             return 1 , ChatOpenAI(
                 temperature=0, model_name="gpt-4o")
         elif model == "にゃん音楽家":
+            img_path = "./image2.jpg"
+            img = Image.open(img_path)
+            st.sidebar.image(img,width=200)
             return 2 , ChatOpenAI(
                 temperature=0.5, model_name="gpt-4o")
         elif model == "ごろにゃん":
+            img_path = "./image3.jpg"
+            img = Image.open(img_path)
+            st.sidebar.image(img,width=200)
             return 3 , ChatOpenAI(
                 temperature=0, model_name="gpt-4o")
         elif model == "プラダにゃん":
+            img_path = "./image4.jpg"
+            img = Image.open(img_path)
+            st.sidebar.image(img,width=200)
             return 4 , ChatOpenAI(
                 temperature=0, model_name="gpt-4o")
         elif model == "ぐーたらにゃん":
+            img_path = "./image5.jpg"
+            img = Image.open(img_path)
+            st.sidebar.image(img,width=200)
             return 5 , ChatOpenAI(
                 temperature=0, model_name="gpt-4o")
                
