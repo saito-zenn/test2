@@ -57,7 +57,7 @@ def select_model():
         if model == "にゃんこ博士":
             img_path = "./saito_neko.jpg"
             img = Image.open(img_path)
-            st.image(img,width=200)
+            st.sidebar.image(img,width=200)
             return 1 , ChatOpenAI(
                 temperature=0, model_name="gpt-4o")
         elif model == "にゃん音楽家":
