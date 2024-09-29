@@ -18,3 +18,4 @@ html2text==2020.1.16
 lxml[html_clean]==5.2.1
 readability-lxml==0.8.1
 
+langchain.document_loaders
