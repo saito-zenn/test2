@@ -34,7 +34,7 @@ def init_page():
     )
     st.image(img,width=200)
     st.header("必要なら検索にゃー！ 🐈")
-    st.sidebar.title("お好きなにゃんこいますか？")
+    st.sidebar.title("好きなにゃんこいる？")
 
 
 def init_messages():
