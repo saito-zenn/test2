@@ -14,6 +14,7 @@ from langchain_google_genai import ChatGoogleGenerativeAI
 # custom tools1
 from tools.search_ddg import search_ddg
 from tools.fetch_page import fetch_page
+from tools.bmi import calculate_bmi
 
 GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
