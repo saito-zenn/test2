@@ -52,8 +52,8 @@ def init_messages():
 def select_model():
     models = ("にゃんこ博士","にゃん音楽家","ごろにゃん","プラダにゃん","ぐーたらにゃん")
     model = st.sidebar.radio("にゃんこ選んでね:", models)
-    password = st.sidebar.text_input("あいことにゃ!", type="password")
-    if password == "DJCobby" :
+    password = st.sidebar.text_input("あいことにゃ! 10/1 19時40分にパスワード変えます", type="password")
+    if password == "DJCobby333" :
         if model == "にゃんこ博士":
             img_path = "./image1.jpg"
             img = Image.open(img_path)
